@@ -1,0 +1,23 @@
+﻿server:
+  port: 8181
+
+spring.application:
+  name: AdminService
+
+spring.boot.admin:
+  url: http://localhost:8181
+  username: ${security.user.name}
+  password: ${security.user.password}
+  client:
+    metadata:
+      user.name: ${security.user.name}
+      user.password: ${security.user.password}
+
+management:
+  context-path: /manager
+  security:
+    enabled: false
+security:
+  user:
+    name: ${adminServerUser}
+    password: ${adminServerPwd}
