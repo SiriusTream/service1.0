@@ -1,0 +1,46 @@
+spring:
+    application:
+        name: su-boot-admin
+    thymeleaf:
+        mode: LEGACYHTML5
+        cache: false
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+    redis:
+        database: 1
+        host: 10.9.4.224
+        pool:
+            max-active: 20
+    datasource:
+        name: test
+        url: jdbc:mysql://${MYSQL_HOST:10.9.4.197}:${MYSQL_PORT:3309}/ag_admin_v1?useUnicode=true&characterEncoding=UTF8
+        username: examcenter
+        password: Examcenter2016
+        # 使用druid数据源
+        type: com.alibaba.druid.pool.DruidDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        filters: stat
+        maxActive: 20
+        initialSize: 1
+        maxWait: 60000
+        minIdle: 1
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: select 'x'
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        poolPreparedStatements: true
+        maxOpenPreparedStatements: 20
+    rabbitmq:
+        host: ${RABBIT_MQ_HOST:192.168.237.128}
+        port:  ${RABBIT_MQ_PORT:5672}
+        username: guest
+        password: guest        
+server:
+    port: 8776 #启动端口
+mybatis:
+    basepackage: com.cntest.su.boot.admin.mapper
+    xmlLocation: classpath:mapper/**/*.xml
+
