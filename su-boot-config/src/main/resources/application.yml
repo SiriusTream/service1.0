@@ -1,0 +1,31 @@
+﻿# 云配置中心端口
+# spring.boot.admin.url 管理中心的访问url与port
+
+#Tomcat 配置
+server:
+  port: 8180
+
+#Spring cloud 云配置路径和方式
+spring:
+  application:
+    name: su-boot-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: http://git.kaow.cn:88/kaow/kw-services.git
+          search-paths: config-files
+          username: linyc@seaskylight.com
+          password: sky123456
+      label: master
+  mvc:
+    async:
+      request-timeout: -1
+            
+#程序自描述信息
+info:
+  application:
+    name: 云配置中心
+    version: 0.0.1-SNAPSHOT
+    owner: SeaSkyLight
+    author: LYC
