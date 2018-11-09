@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Spring
  *
- * @author LYC
+ * @author wanglei
  * @version 1.0 Create By 2018年3月21日
  */
 @SpringBootApplication
